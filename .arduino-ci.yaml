@@ -2,10 +2,10 @@ compile:
   libraries:
     - Spine--Sensors
     - Spine--Actuators
-    - s-t-a-n--Structures
     - Spine--Filters
     - Spine--Timers
     - Spine--ROS-Generated
+    - Structures
     - TinyGPS
     - LSM303
     - OneWire
@@ -17,14 +17,12 @@ unittest:
   libraries:
     - Spine--Sensors
     - Spine--Actuators
-    - s-t-a-n--Structures
     - Spine--Filters
     - Spine--Timers
     - Spine--ROS-Generated
+    - Structures
     - TinyGPS
     - LSM303
-    - OneWire
-    - DallasTemperature
   platforms:
     - mega2560
 
