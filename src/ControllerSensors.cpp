@@ -31,7 +31,7 @@ ControllerSensors::~ControllerSensors()
 
 bool ControllerSensors::Init()
 {
-	uint8_t errors;
+	uint8_t errors = 0;
 	for (Sensor *s : _sensors)
 		errors += (s->Init() == false);
 	return (errors == 0);
@@ -39,7 +39,7 @@ bool ControllerSensors::Init()
 
 bool ControllerSensors::Update()
 {
-	uint8_t errors;
+	uint8_t errors = 0;
 	for (Sensor *s : _sensors)
 		errors += (s->Update() == false);
 	return (errors == 0);
