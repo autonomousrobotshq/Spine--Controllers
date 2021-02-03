@@ -63,7 +63,7 @@ bool ControllerMotor::Init()
 	uint8_t errors = 0;
     for (uint8_t i = 0; i < _motor_count; i++)
         errors += !_motors[i]._actuators_motor.Init();
-	return (errors);
+	return (errors == 0);
 }
 
 void ControllerMotor::Motor::Clear()
