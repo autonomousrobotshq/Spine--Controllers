@@ -2,12 +2,17 @@
 #include <ControllerSensors.hpp>
 
 ControllerSensors cs;
-Sensor s;
+
+/* example sensor */
+const int pin = 10;
+const int sample_count = 10;
+const unsigned long sampling_interval = 1000;
+SensorCurrent sens_current(pin, sample_count, sampling_interval);
 
 int sensor_index = 0;
 
 void setup() {
-	sensor_index = cs.AddSensor(&s);
+	sensor_index = cs.AddSensor(&sens_current);
 	cs.Init();
 }
 
@@ -20,5 +25,6 @@ void loop() {
 		int error = cs.GetSensorData(sensor_index).GetError();
 
 		// handle error
+		(void)error;
 	}
 }

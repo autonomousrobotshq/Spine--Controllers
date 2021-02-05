@@ -21,7 +21,7 @@
 #include <Arduino.h>
 #include <ArduinoUnitTests.h>
 
-#include <Sensor.hpp>
+#include <SensorCurrent.hpp>
 #include <ControllerSensors.hpp>
 
 unittest(ControllersSensors)
@@ -30,7 +30,10 @@ unittest(ControllersSensors)
 	ControllerSensors cm;
 	assertTrue(cm.Init());
 
-	Sensor s;
+	const int pin = 10;
+	const int sample_count = 10;
+	const unsigned long sampling_interval = 1000;
+	SensorCurrent s(pin, sample_count, sampling_interval);
 	int8_t s_i = cm.AddSensor(&s);
 	assertEqual(0, (int)s_i);
 
